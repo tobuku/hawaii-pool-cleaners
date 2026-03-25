@@ -112,7 +112,7 @@ body{font-family:'Libre Franklin',sans-serif;font-weight:400;line-height:1.65;co
 /* ── STORY ───────────────────────── */
 .story-section{background:#fff;overflow:hidden}
 .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.story-img-wrap{position:relative;border-radius:24px;overflow:hidden;cursor:none}
+.story-img-wrap{position:relative;border-radius:24px;overflow:hidden}
 .story-img{width:100%;height:520px;object-fit:cover;display:block;border-radius:24px;transition:transform .6s ease}
 .story-img-wrap:hover .story-img{transform:scale(1.04)}
 .story-text p{font-size:1rem;color:var(--muted);line-height:1.82;margin-bottom:20px}
@@ -139,7 +139,7 @@ body{font-family:'Libre Franklin',sans-serif;font-weight:400;line-height:1.65;co
 .why-icon svg{width:22px;height:22px;color:var(--navy)}
 .why-item-title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;letter-spacing:-.02em}
 .why-item-desc{font-size:.9rem;color:var(--muted);line-height:1.72}
-.why-img-wrap{position:relative;cursor:none}
+.why-img-wrap{position:relative}
 .why-img{width:100%;height:540px;object-fit:cover;border-radius:24px;display:block;transition:transform .5s ease}
 .why-img-wrap:hover .why-img{transform:scale(1.03)}
 .why-badge{position:absolute;bottom:36px;left:-32px;background:#fff;border-radius:18px;padding:20px 26px;box-shadow:0 20px 60px rgba(0,0,0,.14);display:flex;align-items:center;gap:14px}
@@ -183,8 +183,7 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
 .go-top svg{width:22px;height:22px;color:var(--navy)}
 
 /* ── MAGNETIC CURSOR DOT ─────────── */
-.cursor-dot{position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;background:var(--teal);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:screen}
-.cursor-ring{position:fixed;top:0;left:0;width:36px;height:36px;border-radius:50%;border:2px solid rgba(0,208,130,.55);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-color .2s}
+body{cursor:default}
 
 /* ── VINYL SECTION ───────────────────────────── */
 .vinyl-section{background:linear-gradient(135deg,#071220 0%,var(--navy) 50%,#0d2a1a 100%);overflow:hidden;position:relative}
@@ -263,8 +262,6 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
 <body>
 
 <!-- cursor -->
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 
 <!-- NAV -->
 <nav class="nav" id="mainNav">
@@ -276,7 +273,7 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
     <li><a href="/">Home</a></li>
     <li><a href="/about/">About</a></li>
     <li><a href="/offerings/">Offerings</a></li>
-    <li><a href="/blog-2/">Blog</a></li>
+    <li><a href="/blog/">Blog</a></li>
     <li><a href="/contact/" class="nav-cta" id="navCta">Free Liner Quote</a></li>
   </ul>
 </nav>
@@ -556,7 +553,7 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
         <li><a href="/">Home</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="/offerings/">Offerings</a></li>
-        <li><a href="/blog-2/">Blog</a></li>
+        <li><a href="/blog/">Blog</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
@@ -639,25 +636,6 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
     }
   }
 
-  /* ─── CUSTOM CURSOR ────────────────────────────── */
-  var dot = document.getElementById('cursorDot');
-  var ring = document.getElementById('cursorRing');
-  if (!rm && window.matchMedia('(pointer:fine)').matches) {
-    var mx=window.innerWidth/2, my=window.innerHeight/2;
-    var rx=mx, ry=my;
-    window.addEventListener('mousemove', function(e){mx=e.clientX;my=e.clientY;}, {passive:true});
-    gsap.ticker.add(function(){
-      rx+=(mx-rx)*.14; ry+=(my-ry)*.14;
-      gsap.set(dot, {x:mx,y:my});
-      gsap.set(ring, {x:rx,y:ry});
-    });
-    document.querySelectorAll('a,button,.card,.feat-card').forEach(function(el){
-      el.addEventListener('mouseenter',function(){gsap.to(ring,{width:60,height:60,borderColor:'rgba(0,208,130,.9)',duration:.25});gsap.to(dot,{width:6,height:6,duration:.2});});
-      el.addEventListener('mouseleave',function(){gsap.to(ring,{width:36,height:36,borderColor:'rgba(0,208,130,.55)',duration:.25});gsap.to(dot,{width:10,height:10,duration:.2});});
-    });
-  } else {
-    dot.style.display='none'; ring.style.display='none';
-  }
 
   if (rm) {
     // show everything immediately

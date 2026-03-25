@@ -99,8 +99,8 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
 .go-top svg{width:22px;height:22px;color:var(--navy)}
 
 /* CURSOR */
-.cursor-dot{position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;background:var(--teal);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:screen}
-.cursor-ring{position:fixed;top:0;left:0;width:36px;height:36px;border-radius:50%;border:2px solid rgba(0,208,130,.55);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-color .2s}
+body{cursor:default}
+a,button{cursor:pointer}
 
 /* REDUCED MOTION */
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
@@ -112,8 +112,6 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
 </head>
 <body>
 
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 
 <!-- NAV -->
 <nav class="nav" id="mainNav">
@@ -125,7 +123,7 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
     <li><a href="/">Home</a></li>
     <li><a href="/about/">About</a></li>
     <li><a href="/offerings/">Offerings</a></li>
-    <li><a href="/blog-2/">Blog</a></li>
+    <li><a href="/blog/">Blog</a></li>
     <li><a href="/contact/" class="nav-cta">Free Liner Quote</a></li>
   </ul>
 </nav>
@@ -219,7 +217,7 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
         <li><a href="/">Home</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="/offerings/">Offerings</a></li>
-        <li><a href="/blog-2/">Blog</a></li>
+        <li><a href="/blog/">Blog</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
@@ -250,18 +248,6 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
   'use strict';
   var rm = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-  /* cursor */
-  var dot = document.getElementById('cursorDot');
-  var ring = document.getElementById('cursorRing');
-  if (!rm && window.matchMedia('(pointer:fine)').matches) {
-    var mx=window.innerWidth/2,my=window.innerHeight/2,rx=mx,ry=my;
-    window.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;},{passive:true});
-    gsap.ticker.add(function(){rx+=(mx-rx)*.14;ry+=(my-ry)*.14;gsap.set(dot,{x:mx,y:my});gsap.set(ring,{x:rx,y:ry});});
-    document.querySelectorAll('a,button,input,select,textarea').forEach(function(el){
-      el.addEventListener('mouseenter',function(){gsap.to(ring,{width:60,height:60,borderColor:'rgba(0,208,130,.9)',duration:.25});});
-      el.addEventListener('mouseleave',function(){gsap.to(ring,{width:36,height:36,borderColor:'rgba(0,208,130,.55)',duration:.25});});
-    });
-  } else { dot.style.display='none'; ring.style.display='none'; }
 
   /* scroll top */
   var goTop = document.getElementById('goTop');
