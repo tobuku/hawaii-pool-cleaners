@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -o \"#[0-9A-Fa-f]\\\\{3,6\\\\}\" \"C:\\\\Users\\\\HDNG_HelpDesk\\\\Documents\\\\GitHub\\\\hawaii-pool-cleaners\\\\index.html\" | sort -u)"
+    ]
+  }
+}
