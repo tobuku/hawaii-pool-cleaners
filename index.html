@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home - Hawaii Pool Cleaners</title>
-<meta name="description" content="Transform your pool into a pristine oasis with our reliable and professional cleaning services tailored to island living.">
-<meta property="og:title" content="Home - Hawaii Pool Cleaners">
-<meta property="og:description" content="Transform your pool into a pristine oasis with our reliable and professional cleaning services tailored to island living.">
-<link rel="icon" href="/hawaii-pool-cleaners/wp-content/uploads/2024/06/cropped-Hawaii-Pool-Cleaners-Logo-192x192.jpg" sizes="192x192">
-<link rel="apple-touch-icon" href="/hawaii-pool-cleaners/wp-content/uploads/2024/06/cropped-Hawaii-Pool-Cleaners-Logo-192x192.jpg">
+<title>Vinyl Pool Liner Installation & Repair Hawaii | Hawaii Pool Cleaners</title>
+<meta name="description" content="Hawaii's vinyl pool liner specialists. Expert installation, repair, and pool cleaning across Oahu. UV-resistant liners built for island living. Free quotes.">
+<meta property="og:title" content="Vinyl Pool Liner Installation & Repair | Hawaii Pool Cleaners">
+<meta property="og:description" content="Hawaii's vinyl pool liner specialists. Expert installation, repair, and pool cleaning across Oahu. Free quotes available.">
+<link rel="icon" href="/wp-content/uploads/2024/06/cropped-Hawaii-Pool-Cleaners-Logo-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2024/06/cropped-Hawaii-Pool-Cleaners-Logo-192x192.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -186,6 +186,51 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
 .cursor-dot{position:fixed;top:0;left:0;width:10px;height:10px;border-radius:50%;background:var(--teal);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:screen}
 .cursor-ring{position:fixed;top:0;left:0;width:36px;height:36px;border-radius:50%;border:2px solid rgba(0,208,130,.55);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-color .2s}
 
+/* ── VINYL SECTION ───────────────────────────── */
+.vinyl-section{background:linear-gradient(135deg,#071220 0%,var(--navy) 50%,#0d2a1a 100%);overflow:hidden;position:relative}
+.vinyl-section::before{content:'';position:absolute;top:-120px;left:-120px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(0,208,130,.06),transparent 70%);pointer-events:none}
+.vinyl-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:start}
+.vinyl-body p{font-size:1rem;color:rgba(255,255,255,.65);line-height:1.82;margin-bottom:18px}
+.vinyl-benefits{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:36px}
+.vb-item{display:flex;gap:14px;align-items:flex-start}
+.vb-icon{flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(0,208,130,.1);border:1px solid rgba(0,208,130,.22);display:flex;align-items:center;justify-content:center}
+.vb-icon svg{width:18px;height:18px;color:var(--teal)}
+.vb-item strong{font-size:.9rem;font-weight:700;color:#fff;display:block;margin-bottom:4px}
+.vb-item p{font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.6;margin:0}
+.vinyl-stats-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-top:56px}
+.vinyl-stat-card{background:rgba(255,255,255,.04);border:1px solid rgba(0,208,130,.14);border-radius:20px;padding:34px 24px;text-align:center;transition:border-color .4s,background .4s,transform .3s}
+.vinyl-stat-card:hover{border-color:rgba(0,208,130,.38);background:rgba(0,208,130,.06);transform:translateY(-4px)}
+.vs-num{font-size:2.6rem;font-weight:800;color:var(--teal);letter-spacing:-.05em;line-height:1;margin-bottom:8px}
+.vs-label{font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+@media(max-width:1024px){.vinyl-grid{grid-template-columns:1fr;gap:48px}.vinyl-stats-col{padding-top:0}}
+@media(max-width:768px){.vinyl-benefits{grid-template-columns:1fr}}
+
+/* ── GALLERY ─────────────────────────────────── */
+.gallery-section{background:var(--lgray)}
+.gallery-intro{text-align:center;margin-bottom:60px}
+.gallery-sub{font-size:1rem;color:var(--muted);margin-top:16px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.76}
+.gal-grid{columns:4;column-gap:12px}
+.gal-item{break-inside:avoid;margin-bottom:12px;border-radius:14px;overflow:hidden;cursor:pointer;position:relative;will-change:transform;display:block}
+.gal-item img{width:100%;display:block;transition:transform .5s ease}
+.gal-item:hover img{transform:scale(1.07)}
+.gal-overlay{position:absolute;inset:0;background:rgba(0,208,130,0);display:flex;align-items:center;justify-content:center;transition:background .3s}
+.gal-overlay svg{color:#fff;width:34px;height:34px;opacity:0;transform:scale(.7);transition:opacity .3s,transform .3s}
+.gal-item:hover .gal-overlay{background:rgba(0,208,130,.32)}
+.gal-item:hover .gal-overlay svg{opacity:1;transform:scale(1)}
+.gal-lb{position:fixed;inset:0;background:rgba(5,14,26,.97);z-index:10000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .28s}
+.gal-lb.open{opacity:1;pointer-events:all}
+.gal-lb-img-wrap{max-width:90vw;max-height:88vh;display:flex;align-items:center;justify-content:center}
+.gal-lb-img{max-width:90vw;max-height:86vh;object-fit:contain;border-radius:10px;display:block}
+.gal-lb-btn{position:absolute;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#fff;cursor:pointer;border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;line-height:1;transition:background .2s,color .2s;padding:0}
+.gal-lb-btn:hover{background:var(--teal);color:var(--navy);border-color:var(--teal)}
+.gal-lb-close{top:20px;right:20px}
+.gal-lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+.gal-lb-next{right:20px;top:50%;transform:translateY(-50%)}
+.gal-lb-counter{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.42);font-size:.78rem;letter-spacing:.14em;white-space:nowrap}
+@media(max-width:1024px){.gal-grid{columns:3}}
+@media(max-width:768px){.gal-grid{columns:2}}
+@media(max-width:480px){.gal-grid{columns:1}}
+
 /* ── REDUCED MOTION ──────────────── */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
@@ -223,16 +268,16 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
 
 <!-- NAV -->
 <nav class="nav" id="mainNav">
-  <a href="/hawaii-pool-cleaners/" class="nav-logo" id="navLogo">
-    <img src="/hawaii-pool-cleaners/wp-content/uploads/2024/06/Hawaii-Pool-Cleaners-Logo.jpg" alt="Hawaii Pool Cleaners">
+  <a href="/" class="nav-logo" id="navLogo">
+    <img src="/wp-content/uploads/2024/06/Hawaii-Pool-Cleaners-Logo.jpg" alt="Hawaii Pool Cleaners">
     <div class="nav-logo-text">Hawaii Pool Cleaners<span>Island Pool Experts</span></div>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="/hawaii-pool-cleaners/">Home</a></li>
-    <li><a href="/hawaii-pool-cleaners/about/">About</a></li>
-    <li><a href="/hawaii-pool-cleaners/offerings/">Offerings</a></li>
-    <li><a href="/hawaii-pool-cleaners/blog-2/">Blog</a></li>
-    <li><a href="/hawaii-pool-cleaners/contact/" class="nav-cta" id="navCta">Get Started Now</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/offerings/">Offerings</a></li>
+    <li><a href="/blog-2/">Blog</a></li>
+    <li><a href="/contact/" class="nav-cta" id="navCta">Free Liner Quote</a></li>
   </ul>
 </nav>
 
@@ -244,11 +289,11 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
   <div class="hero-content">
     <div class="hero-eyebrow" id="heroEyebrow">Trusted Pool Experts</div>
     <h1 class="hero-title" id="heroTitle">
-      <span class="word"><span class="word-inner">Pool</span></span>&nbsp;<span class="word"><span class="word-inner">Cleaning,</span></span>&nbsp;<span class="word"><span class="word-inner accent">Repair</span></span><br>
-      <span class="word"><span class="word-inner">and</span></span>&nbsp;<span class="word"><span class="word-inner">Vinyl</span></span>&nbsp;<span class="word"><span class="word-inner">Lining</span></span>&nbsp;<span class="word"><span class="word-inner">Services</span></span>
+      <span class="word"><span class="word-inner accent">Vinyl</span></span>&nbsp;<span class="word"><span class="word-inner accent">Liner</span></span>&nbsp;<span class="word"><span class="word-inner">Installation</span></span><br>
+      <span class="word"><span class="word-inner">&amp;</span></span>&nbsp;<span class="word"><span class="word-inner">Repair</span></span>&nbsp;<span class="word"><span class="word-inner">—</span></span>&nbsp;<span class="word"><span class="word-inner">Hawaii</span></span>
     </h1>
-    <p class="hero-sub" id="heroSub">Transform your pool into a pristine oasis with our reliable and professional cleaning services tailored to island living.</p>
-    <a href="/hawaii-pool-cleaners/contact/" class="hero-btn" id="heroBtn">Get Started Now</a>
+    <p class="hero-sub" id="heroSub">Hawaii's trusted vinyl pool liner specialists. We install, repair, and maintain pools across Oahu — transforming worn pools into stunning backyard retreats built for island living.</p>
+    <a href="/contact/" class="hero-btn" id="heroBtn">Get a Free Liner Quote</a>
   </div>
   <div class="wave-divider">
     <svg viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="height:160px">
@@ -274,22 +319,22 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
     <div class="services-hd">
       <div>
         <span class="eyebrow">What We Do</span>
-        <h2 class="h2" id="svcTitle">Our Pool Services</h2>
+        <h2 class="h2" id="svcTitle">Vinyl Liners, Repair & Pool Care</h2>
       </div>
-      <a href="/hawaii-pool-cleaners/services/" class="view-all">View All Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="/services/" class="view-all">View All Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
     <div class="grid3">
       <div class="card magnetic-img" data-magnetic>
-        <div class="card-img-wrap"><img class="card-img" src="/hawaii-pool-cleaners/wp-content/uploads/2025/04/pexels-photo-261152.jpeg" alt="Pool Vacuuming" loading="lazy"></div>
-        <div class="card-body"><div class="card-bar"></div><h3 class="card-title">Pool Vacuuming</h3><p class="card-desc">Keep your pool spotless with our expert vacuuming services.</p><a href="/hawaii-pool-cleaners/services/" class="card-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+        <div class="card-img-wrap"><img class="card-img" src="/wp-content/uploads/2025/04/pexels-photo-17410701.jpeg" alt="Vinyl Liner Installation" loading="lazy"></div>
+        <div class="card-body"><div class="card-bar"></div><h3 class="card-title">Vinyl Liner Installation</h3><p class="card-desc">Our specialty. We supply and install UV-resistant vinyl liners built for Hawaii's climate — custom fit, precision installed, guaranteed.</p><a href="/services/" class="card-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
       </div>
       <div class="card magnetic-img" data-magnetic>
-        <div class="card-img-wrap"><img class="card-img" src="/hawaii-pool-cleaners/wp-content/uploads/2025/04/pexels-photo-29733671.jpeg" alt="Chlorine Treatments" loading="lazy"></div>
-        <div class="card-body"><div class="card-bar"></div><h3 class="card-title">Chlorine Treatments</h3><p class="card-desc">Maintain water clarity and safety with our chlorine treatment services.</p><a href="/hawaii-pool-cleaners/services/" class="card-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+        <div class="card-img-wrap"><img class="card-img" src="/wp-content/uploads/2025/04/pexels-photo-29733671.jpeg" alt="Pool Repair" loading="lazy"></div>
+        <div class="card-body"><div class="card-bar"></div><h3 class="card-title">Pool Repair & Restoration</h3><p class="card-desc">From liner tears and leaks to motor and pump failures — we diagnose and fix it right the first time.</p><a href="/services/" class="card-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
       </div>
       <div class="card magnetic-img" data-magnetic>
-        <div class="card-img-wrap"><img class="card-img" src="/hawaii-pool-cleaners/wp-content/uploads/2025/04/pexels-photo-17410701.jpeg" alt="Vinyl Liner Installation" loading="lazy"></div>
-        <div class="card-body"><div class="card-bar"></div><h3 class="card-title">Vinyl Liner Installation</h3><p class="card-desc">Enhance the look and longevity of your pool with our vinyl liner installation.</p><a href="/hawaii-pool-cleaners/services/" class="card-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+        <div class="card-img-wrap"><img class="card-img" src="/wp-content/uploads/2025/04/pexels-photo-261152.jpeg" alt="Pool Cleaning" loading="lazy"></div>
+        <div class="card-body"><div class="card-bar"></div><h3 class="card-title">Pool Cleaning & Maintenance</h3><p class="card-desc">Weekly and monthly service plans that keep your water balanced, surfaces clean, and equipment running smoothly.</p><a href="/services/" class="card-link">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
       </div>
     </div>
   </div>
@@ -300,14 +345,14 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
   <div class="container">
     <div class="story-grid">
       <div class="story-img-wrap magnetic-img" data-magnetic id="storyImgWrap">
-        <img class="story-img" src="/hawaii-pool-cleaners/wp-content/uploads/2025/04/pexels-photo-1147124.jpeg" alt="Our Story" loading="lazy" id="storyImg">
+        <img class="story-img" src="/wp-content/uploads/2025/04/pexels-photo-1147124.jpeg" alt="Our Story" loading="lazy" id="storyImg">
       </div>
       <div id="storyText">
         <span class="eyebrow">Who We Are</span>
         <h2 class="h2" style="margin-bottom:26px" id="storyH2">Our Story and Commitment</h2>
         <p>Hawaii Pool Cleaners has built a reputation for excellence over the past 25 years. Our dedicated team ensures your pool remains a beautiful and safe haven.</p>
         <p>Founded by pool enthusiasts, we started our journey aimed at providing the highest quality pool care for Hawaii's vibrant communities.</p>
-        <a href="/hawaii-pool-cleaners/about/" class="btn-outline sticky-btn">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="/about/" class="btn-outline sticky-btn">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
     </div>
   </div>
@@ -319,10 +364,127 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
     <span class="eyebrow">Our Expertise</span>
     <h2 class="h2 h2-light" id="featH2">What Sets Us Apart</h2>
     <div class="feat-grid">
-      <div class="feat-card" id="fc1"><div class="feat-num">01</div><h3 class="feat-title">Expert Cleaning</h3><p class="feat-desc">Our skilled team specializes in thorough pool vacuuming and maintenance services that exceed industry standards.</p></div>
-      <div class="feat-card" id="fc2"><div class="feat-num">02</div><h3 class="feat-title">Chemical Balance</h3><p class="feat-desc">We provide essential chlorine treatments, pH testing, and acid balancing to keep your water safe and sparkling clean.</p></div>
-      <div class="feat-card" id="fc3"><div class="feat-num">03</div><h3 class="feat-title">Reliable Repairs</h3><p class="feat-desc">From motor and pump repairs to vinyl liner installation, our technicians ensure your pool operates smoothly and efficiently.</p></div>
+      <div class="feat-card" id="fc1"><div class="feat-num">01</div><h3 class="feat-title">Vinyl Liner Specialists</h3><p class="feat-desc">Hundreds of vinyl liner installs across Oahu. We source UV-resistant, salt-air-rated liners and custom-fit every job — no shortcuts.</p></div>
+      <div class="feat-card" id="fc2"><div class="feat-num">02</div><h3 class="feat-title">Expert Pool Repair</h3><p class="feat-desc">Liner tears, leaks, cracked shells, motor failures — our technicians diagnose fast and repair right, minimizing downtime.</p></div>
+      <div class="feat-card" id="fc3"><div class="feat-num">03</div><h3 class="feat-title">Ongoing Maintenance</h3><p class="feat-desc">Chlorine treatments, pH and acid balancing, vacuuming, and filter service — regular plans to keep your water pristine year-round.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- VINYL SPECIALIST -->
+<section class="section vinyl-section" id="vinyl">
+  <div class="container">
+    <div class="vinyl-grid">
+      <div class="vinyl-body" id="vinylText">
+        <span class="eyebrow">Our Specialty</span>
+        <h2 class="h2 h2-light" style="margin-bottom:26px" id="vinylH2">Hawaii's Vinyl Liner Specialists</h2>
+        <p>Hawaii's climate is beautiful — and brutal on pools. Intense UV, salt air, and year-round heat degrade pool liners faster than almost anywhere else. A properly installed vinyl liner protects your pool's structure, cuts chemical costs, and transforms a tired pool into a showpiece.</p>
+        <p>We've installed and repaired hundreds of vinyl liners across Oahu. Every liner we supply is rated for tropical climates — UV-stabilized, salt-air resistant, and available in dozens of custom patterns. Every install comes with our satisfaction guarantee.</p>
+        <div class="vinyl-benefits">
+          <div class="vb-item" id="vb1">
+            <div class="vb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+            <div><strong>UV-Resistant Materials</strong><p>Formulated for Hawaii's sun — colors stay vibrant and liners stay flexible for years.</p></div>
+          </div>
+          <div class="vb-item" id="vb2">
+            <div class="vb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><strong>Precision Installation</strong><p>Custom-measured and wrinkle-free — every liner sealed perfectly to eliminate leaks.</p></div>
+          </div>
+          <div class="vb-item" id="vb3">
+            <div class="vb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <div><strong>Cost Effective</strong><p>Fraction of the cost of concrete resurfacing — with faster turnaround and better results.</p></div>
+          </div>
+          <div class="vb-item" id="vb4">
+            <div class="vb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+            <div><strong>Custom Patterns</strong><p>Dozens of designs from classic Caribbean blue to tropical tile and mosaic prints.</p></div>
+          </div>
+        </div>
+        <a href="/contact/" class="hero-btn" style="margin-top:40px;display:inline-block;opacity:1;transform:none" id="vinylCta">Get a Free Liner Quote</a>
+      </div>
+      <div class="vinyl-stats-col" id="vinylStats">
+        <div class="vinyl-stat-card" id="vs1"><div class="vs-num">200+</div><div class="vs-label">Liners Installed</div></div>
+        <div class="vinyl-stat-card" id="vs2"><div class="vs-num">15yr</div><div class="vs-label">Avg Liner Lifespan</div></div>
+        <div class="vinyl-stat-card" id="vs3"><div class="vs-num">48hr</div><div class="vs-label">Typical Install Time</div></div>
+        <div class="vinyl-stat-card" id="vs4"><div class="vs-num">100%</div><div class="vs-label">Satisfaction Guaranteed</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section gallery-section" id="gallery">
+  <div class="container">
+    <div class="gallery-intro">
+      <span class="eyebrow">Our Work</span>
+      <h2 class="h2" id="galleryH2">Real Pools. Real Results.</h2>
+      <p class="gallery-sub">From vinyl liner installations to complete pool transformations across Oahu — see what we've built for your neighbors.</p>
+    </div>
+    <div class="gal-grid" id="galGrid">
+      <div class="gal-item" data-src="/img/pools/1.jpg"><img src="/img/pools/1.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/3.jpg"><img src="/img/pools/3.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/4.jpg"><img src="/img/pools/4.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/10.jpg"><img src="/img/pools/10.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/11.jpg"><img src="/img/pools/11.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/18.JPG"><img src="/img/pools/18.JPG" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/21.jpg"><img src="/img/pools/21.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/22.jpg"><img src="/img/pools/22.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/29.JPG"><img src="/img/pools/29.JPG" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/30.jpg"><img src="/img/pools/30.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/37.jpg"><img src="/img/pools/37.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/38.jpg"><img src="/img/pools/38.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/39.jpg"><img src="/img/pools/39.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/40.jpg"><img src="/img/pools/40.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/41.jpg"><img src="/img/pools/41.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/42.jpg"><img src="/img/pools/42.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/43.jpg"><img src="/img/pools/43.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/44.jpg"><img src="/img/pools/44.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/45.jpg"><img src="/img/pools/45.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/49.jpg"><img src="/img/pools/49.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/60.jpg"><img src="/img/pools/60.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/61.jpg"><img src="/img/pools/61.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/67.jpg"><img src="/img/pools/67.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/68.jpg"><img src="/img/pools/68.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/71.jpg"><img src="/img/pools/71.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/72.jpg"><img src="/img/pools/72.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/73.jpg"><img src="/img/pools/73.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/74.jpg"><img src="/img/pools/74.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/75.jpg"><img src="/img/pools/75.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/76.jpg"><img src="/img/pools/76.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/77.jpg"><img src="/img/pools/77.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/78.JPG"><img src="/img/pools/78.JPG" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/79.jpg"><img src="/img/pools/79.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/91.jpg"><img src="/img/pools/91.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/92.jpg"><img src="/img/pools/92.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/93.jpg"><img src="/img/pools/93.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/95.jpg"><img src="/img/pools/95.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/96.jpg"><img src="/img/pools/96.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/97.jpg"><img src="/img/pools/97.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/98.JPG"><img src="/img/pools/98.JPG" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/99.jpg"><img src="/img/pools/99.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/100.jpg"><img src="/img/pools/100.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/101.jpg"><img src="/img/pools/101.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/102.jpg"><img src="/img/pools/102.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/103.jpg"><img src="/img/pools/103.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/104.jpg"><img src="/img/pools/104.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/105.jpg"><img src="/img/pools/105.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/106.jpg"><img src="/img/pools/106.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/107.jpg"><img src="/img/pools/107.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/108.jpg"><img src="/img/pools/108.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/109.jpg"><img src="/img/pools/109.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/110.jpg"><img src="/img/pools/110.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/111.jpg"><img src="/img/pools/111.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/112.jpg"><img src="/img/pools/112.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/113.jpg"><img src="/img/pools/113.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/114.jpg"><img src="/img/pools/114.jpg" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+      <div class="gal-item" data-src="/img/pools/115.JPG"><img src="/img/pools/115.JPG" alt="Pool work by Hawaii Pool Cleaners" loading="lazy"><div class="gal-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div></div>
+    </div>
+  </div>
+  <!-- Lightbox -->
+  <div class="gal-lb" id="galLb" role="dialog" aria-modal="true">
+    <button class="gal-lb-btn gal-lb-close" id="galLbClose" aria-label="Close">&#215;</button>
+    <button class="gal-lb-btn gal-lb-prev" id="galLbPrev" aria-label="Previous">&#8249;</button>
+    <button class="gal-lb-btn gal-lb-next" id="galLbNext" aria-label="Next">&#8250;</button>
+    <div class="gal-lb-img-wrap"><img class="gal-lb-img" id="galLbImg" src="" alt="Pool work"></div>
+    <div class="gal-lb-counter" id="galLbCounter"></div>
   </div>
 </section>
 
@@ -349,7 +511,7 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
         </div>
       </div>
       <div class="why-img-wrap magnetic-img" data-magnetic id="whyImgWrap">
-        <img class="why-img" src="/hawaii-pool-cleaners/wp-content/uploads/2025/04/pexels-photo-17568095.jpeg" alt="Why Choose Us" loading="lazy">
+        <img class="why-img" src="/wp-content/uploads/2025/04/pexels-photo-17568095.jpeg" alt="Why Choose Us" loading="lazy">
         <div class="why-badge"><div class="why-badge-num">25+</div><div class="why-badge-label">Years Serving Hawaii</div></div>
       </div>
     </div>
@@ -368,13 +530,13 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
         <div class="testi-quote">"</div>
         <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <p class="testi-text">"Hawaii Pool Cleaners transformed my green pool into a vibrant oasis! Their team is knowledgeable, friendly, and always on time."</p>
-        <div class="testi-author"><img class="testi-avatar" src="/hawaii-pool-cleaners/wp-content/uploads/2023/08/testimonial-skip-01.jpg" alt="Ray" loading="lazy"><div><div class="testi-name">Ray</div><div class="testi-loc">Hawaii Kai</div></div></div>
+        <div class="testi-author"><img class="testi-avatar" src="/wp-content/uploads/2023/08/testimonial-skip-01.jpg" alt="Ray" loading="lazy"><div><div class="testi-name">Ray</div><div class="testi-loc">Hawaii Kai</div></div></div>
       </div>
       <div class="testi-card" id="tc2">
         <div class="testi-quote">"</div>
         <div class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
         <p class="testi-text">"I'm thrilled with the service provided by Hawaii Pool Cleaners. They're attentive and have made my pool the star of my backyard!"</p>
-        <div class="testi-author"><img class="testi-avatar" src="/hawaii-pool-cleaners/wp-content/uploads/2023/08/testimonial-skip-02.jpg" alt="Serena" loading="lazy"><div><div class="testi-name">Serena</div><div class="testi-loc">Mililani</div></div></div>
+        <div class="testi-author"><img class="testi-avatar" src="/wp-content/uploads/2023/08/testimonial-skip-02.jpg" alt="Serena" loading="lazy"><div><div class="testi-name">Serena</div><div class="testi-loc">Mililani</div></div></div>
       </div>
     </div>
   </div>
@@ -384,28 +546,28 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="/hawaii-pool-cleaners/wp-content/uploads/2024/06/Hawaii-Pool-Cleaners-Logo.jpg" alt="Hawaii Pool Cleaners">
+      <img src="/wp-content/uploads/2024/06/Hawaii-Pool-Cleaners-Logo.jpg" alt="Hawaii Pool Cleaners">
       <div class="footer-brand-name">Hawaii Pool Cleaners</div>
       <p class="footer-brand-desc">Transform your pool into a pristine oasis with our reliable and professional cleaning services tailored to island living.</p>
     </div>
     <div>
       <div class="footer-col-title">Navigation</div>
       <ul class="footer-links">
-        <li><a href="/hawaii-pool-cleaners/">Home</a></li>
-        <li><a href="/hawaii-pool-cleaners/about/">About</a></li>
-        <li><a href="/hawaii-pool-cleaners/offerings/">Offerings</a></li>
-        <li><a href="/hawaii-pool-cleaners/blog-2/">Blog</a></li>
-        <li><a href="/hawaii-pool-cleaners/contact/">Contact</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/offerings/">Offerings</a></li>
+        <li><a href="/blog-2/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Services</div>
       <ul class="footer-links">
-        <li><a href="/hawaii-pool-cleaners/services/">Pool Vacuuming</a></li>
-        <li><a href="/hawaii-pool-cleaners/services/">Chlorine Treatments</a></li>
-        <li><a href="/hawaii-pool-cleaners/services/">Vinyl Liner Installation</a></li>
-        <li><a href="/hawaii-pool-cleaners/services/">Motor &amp; Pump Repair</a></li>
-        <li><a href="/hawaii-pool-cleaners/faqs/">FAQs</a></li>
+        <li><a href="/services/">Vinyl Liner Installation</a></li>
+        <li><a href="/services/">Vinyl Liner Repair</a></li>
+        <li><a href="/services/">Pool Repair &amp; Restoration</a></li>
+        <li><a href="/services/">Pool Cleaning &amp; Maintenance</a></li>
+        <li><a href="/faqs/">FAQs</a></li>
       </ul>
     </div>
   </div>
@@ -499,7 +661,7 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
 
   if (rm) {
     // show everything immediately
-    document.querySelectorAll('.hero-eyebrow,.hero-title,.hero-sub,.hero-btn,.card,.feat-card,.why-item,.testi-card,#storyImgWrap,#storyText,#whyImgWrap').forEach(function(e){e.style.opacity='1';e.style.transform='none';});
+    document.querySelectorAll('.hero-eyebrow,.hero-title,.hero-sub,.hero-btn,.card,.feat-card,.why-item,.testi-card,#storyImgWrap,#storyText,#whyImgWrap,#vinylText,#vinylStats,.vb-item,.vinyl-stat-card,.gal-item').forEach(function(e){e.style.opacity='1';e.style.transform='none';});
     document.querySelectorAll('.stat-num').forEach(function(e){e.textContent=e.dataset.to+e.dataset.suf;});
     return;
   }
@@ -545,7 +707,7 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
 
   /* ─── SECTION TITLE BOUNCE ─────────────────────── */
   // Split each section h2 into words and bounce them in
-  ['#svcTitle','#storyH2','#featH2','#whyH2','#testiH2'].forEach(function(sel){
+  ['#svcTitle','#storyH2','#featH2','#vinylH2','#galleryH2','#whyH2','#testiH2'].forEach(function(sel){
     var el = document.querySelector(sel);
     if (!el) return;
     var words = el.textContent.trim().split(' ');
@@ -615,6 +777,69 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
     card.addEventListener('mouseleave',function(){
       gsap.to(card,{rotateX:0,rotateY:0,duration:.6,ease:'elastic.out(1,.5)'});
     });
+  });
+
+  /* ─── VINYL SECTION ────────────────────────────── */
+  gsap.from('#vinylText',{x:-60,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:'#vinyl',start:'top 78%'}});
+  gsap.from('#vinylStats',{x:60,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:'#vinyl',start:'top 78%'}});
+  gsap.from('#vb1,#vb2,#vb3,#vb4',{y:30,opacity:0,duration:.6,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'#vinyl',start:'top 65%'}});
+  gsap.from('#vs1,#vs2,#vs3,#vs4',{scale:.85,opacity:0,duration:.65,stagger:.12,ease:'back.out(1.5)',scrollTrigger:{trigger:'#vinylStats',start:'top 80%'}});
+  document.querySelectorAll('.vinyl-stat-card').forEach(function(card){
+    card.addEventListener('mousemove',function(e){
+      var r=card.getBoundingClientRect();
+      var rx=((e.clientY-r.top)/r.height-.5)*12;
+      var ry=((e.clientX-r.left)/r.width-.5)*-12;
+      gsap.to(card,{rotateX:rx,rotateY:ry,duration:.35,ease:'power2.out',transformPerspective:600});
+    });
+    card.addEventListener('mouseleave',function(){
+      gsap.to(card,{rotateX:0,rotateY:0,duration:.6,ease:'elastic.out(1,.5)'});
+    });
+  });
+
+  /* ─── GALLERY ───────────────────────────────────── */
+  var galItems = Array.from(document.querySelectorAll('.gal-item'));
+  var galSrcs = galItems.map(function(el){return el.dataset.src;});
+  var galLb = document.getElementById('galLb');
+  var galLbImg = document.getElementById('galLbImg');
+  var galLbCounter = document.getElementById('galLbCounter');
+  var galIdx = 0;
+
+  function galOpen(idx){
+    galIdx = idx;
+    galLbImg.src = galSrcs[idx];
+    galLbCounter.textContent = (idx+1)+' / '+galSrcs.length;
+    galLb.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function galClose(){
+    galLb.classList.remove('open');
+    document.body.style.overflow='';
+    setTimeout(function(){galLbImg.src='';},300);
+  }
+  function galNav(dir){
+    galIdx=(galIdx+dir+galSrcs.length)%galSrcs.length;
+    gsap.to(galLbImg,{opacity:0,duration:.12,onComplete:function(){
+      galLbImg.src=galSrcs[galIdx];
+      galLbCounter.textContent=(galIdx+1)+' / '+galSrcs.length;
+      galLbImg.onload=function(){gsap.to(galLbImg,{opacity:1,duration:.18});};
+    }});
+  }
+
+  galItems.forEach(function(item,i){item.addEventListener('click',function(){galOpen(i);});});
+  document.getElementById('galLbClose').addEventListener('click',galClose);
+  document.getElementById('galLbPrev').addEventListener('click',function(){galNav(-1);});
+  document.getElementById('galLbNext').addEventListener('click',function(){galNav(1);});
+  galLb.addEventListener('click',function(e){if(e.target===this)galClose();});
+  window.addEventListener('keydown',function(e){
+    if(!galLb.classList.contains('open'))return;
+    if(e.key==='Escape')galClose();
+    if(e.key==='ArrowLeft')galNav(-1);
+    if(e.key==='ArrowRight')galNav(1);
+  });
+
+  ScrollTrigger.batch('.gal-item',{
+    onEnter:function(els){gsap.from(els,{opacity:0,y:36,duration:.65,stagger:.04,ease:'power3.out'});},
+    start:'top 92%',once:true
   });
 
   /* ─── SCROLL TOP ───────────────────────────────── */
