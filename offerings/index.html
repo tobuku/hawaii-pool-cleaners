@@ -157,8 +157,22 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
 .go-top:hover{background:var(--lteal)}
 .go-top svg{width:22px;height:22px;color:var(--navy)}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;padding:6px;cursor:pointer;z-index:1002;flex-shrink:0}
+.nav-toggle span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile{position:fixed;inset:0;background:rgba(10,22,40,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);z-index:1001;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:translateX(100%);transition:transform .4s cubic-bezier(.77,0,.18,1);pointer-events:none}
+.nav-mobile.open{transform:translateX(0);pointer-events:all}
+.nav-mobile-links{list-style:none;display:flex;flex-direction:column;align-items:center;gap:0;width:100%;padding:0 24px;margin-bottom:36px}
+.nav-mobile-links li{width:100%;text-align:center;border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-mobile-links li:first-child{border-top:1px solid rgba(255,255,255,.07)}
+.nav-mobile-links a{display:block;padding:22px 16px;color:rgba(255,255,255,.85);text-decoration:none;font-size:1rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
+.nav-mobile-links a:hover{color:var(--teal)}
+.mobile-cta-btn{display:inline-block;background:var(--teal);color:var(--navy)!important;text-decoration:none;font-weight:800;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;padding:16px 44px;border-radius:50px;transition:background .3s}
+.mobile-cta-btn:hover{background:var(--lteal)}
 @media(max-width:1024px){.featured-card{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr}.photo-strip-inner{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.nav{padding:14px 20px}.nav-links{display:none}.page-hero{padding:120px 20px 70px}.featured-section,.services-section,.process-section,.cta-section,.photo-strip{padding:70px 20px}.services-grid{grid-template-columns:1fr}.featured-body{padding:36px 28px}.footer-inner{grid-template-columns:1fr;gap:32px}.photo-strip-inner{grid-template-columns:1fr}}
+@media(max-width:768px){.nav{padding:14px 20px}.nav-toggle{display:flex}.nav-links{display:none!important}.page-hero{padding:120px 20px 70px}.featured-section,.services-section,.process-section,.cta-section,.photo-strip{padding:70px 20px}.services-grid{grid-template-columns:1fr}.featured-body{padding:36px 28px}.footer-inner{grid-template-columns:1fr;gap:32px}.photo-strip-inner{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -175,7 +189,19 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
     <li><a href="/blog/">Blog</a></li>
     <li><a href="/contact/" class="nav-cta">Free Liner Quote</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <ul class="nav-mobile-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/offerings/">Offerings</a></li>
+    <li><a href="/blog/">Blog</a></li>
+  </ul>
+  <a href="/contact/" class="mobile-cta-btn">Free Liner Quote</a>
+</div>
 
 <div class="page-hero">
   <span class="eyebrow">What We Offer</span>
@@ -372,6 +398,26 @@ footer{background:#050e1a;padding:64px 40px 36px;border-top:1px solid rgba(255,2
   'use strict';
   gsap.registerPlugin(ScrollTrigger);
   var rm = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var navToggle = document.getElementById('navToggle');
+  var navMobile = document.getElementById('navMobile');
+  if (navToggle && navMobile) {
+    navToggle.addEventListener('click', function(){
+      var isOpen = navMobile.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navMobile.setAttribute('aria-hidden', String(!isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    navMobile.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        navMobile.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded','false');
+        navMobile.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+      });
+    });
+  }
   var goTop = document.getElementById('goTop');
   window.addEventListener('scroll',function(){goTop.classList.toggle('show',window.scrollY>400);},{passive:true});
   goTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
