@@ -1,0 +1,46 @@
+name: Area Pages Spot-Check Reminder
+
+on:
+  workflow_dispatch:
+  # Runs once, 10 minutes after pages go live (GitHub Pages takes ~2-5 min to deploy)
+  # Trigger manually from Actions tab after pushing pages
+
+jobs:
+  send-reminder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send spot-check email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: firedog3354@gmail.com
+          password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          to: firedog3354@gmail.com
+          from: "Hawaii Pool Cleaners <firedog3354@gmail.com>"
+          subject: "Check hawaiipoolcleaners.com — 53 area pages are live"
+          body: |
+            All 53 Oahu area pages have been pushed to hawaiipoolcleaners.com.
+
+            GitHub Pages takes 2-5 minutes to deploy. Check a few of these now:
+
+            High-traffic areas (check these first):
+            https://hawaiipoolcleaners.com/areas/honolulu/
+            https://hawaiipoolcleaners.com/areas/kailua/
+            https://hawaiipoolcleaners.com/areas/kaneohe/
+            https://hawaiipoolcleaners.com/areas/kapolei/
+            https://hawaiipoolcleaners.com/areas/mililani/
+
+            Also spot-check one from each end of the island:
+            https://hawaiipoolcleaners.com/areas/waikiki/
+            https://hawaiipoolcleaners.com/areas/haleiwa/
+            https://hawaiipoolcleaners.com/areas/waianae/
+            https://hawaiipoolcleaners.com/areas/kailua/
+
+            What to check:
+            - Page loads (no 404)
+            - Layout looks clean
+            - Area name and address info is correct
+            - Phone number shows correctly
+
+            Next step: add all 53 URLs to sitemap.xml when you are ready.
