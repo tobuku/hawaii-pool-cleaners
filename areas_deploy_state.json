@@ -1,0 +1,23 @@
+{
+  "pushed": [
+    "kaneohe",
+    "honolulu",
+    "pearl-city",
+    "mililani",
+    "kapolei",
+    "kailua"
+  ],
+  "batches": [
+    {
+      "date": "2026-04-15",
+      "slugs": [
+        "honolulu",
+        "kailua",
+        "kaneohe",
+        "kapolei",
+        "mililani",
+        "pearl-city"
+      ]
+    }
+  ]
+}
