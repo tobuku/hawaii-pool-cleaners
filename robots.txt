@@ -4,5 +4,9 @@ Disallow: /wp-admin/
 Disallow: /wp-json/
 Disallow: /wp-login.php
 Disallow: /wp-includes/
+Disallow: /*/feed/
+Disallow: /feed/
+Disallow: /comments/feed/
+Disallow: /xmlrpc.php
 
 Sitemap: https://hawaiipoolcleaners.com/sitemap.xml
