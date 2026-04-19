@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -o \"#[0-9A-Fa-f]\\\\{3,6\\\\}\" \"C:\\\\Users\\\\HDNG_HelpDesk\\\\Documents\\\\GitHub\\\\hawaii-pool-cleaners\\\\index.html\" | sort -u)"
+      "Bash(grep -o \"#[0-9A-Fa-f]\\\\{3,6\\\\}\" \"C:\\\\Users\\\\HDNG_HelpDesk\\\\Documents\\\\GitHub\\\\hawaii-pool-cleaners\\\\index.html\" | sort -u)",
+      "Read(//c/Users/HDNG_HelpDesk/Documents/GitHub/proveforme-frontend/**)",
+      "Read(//c/Users/HDNG_HelpDesk/Documents/GitHub/proveforme-backend/**)",
+      "Bash(find /c/Users/HDNG_HelpDesk/Documents/GitHub/proveforme-backend -maxdepth 2 -type f \\\\\\( -name \"*.ts\" -o -name \"*.js\" \\\\\\) ! -path \"*/node_modules/*\" ! -path \"*/.next/*\" 2>/dev/null | head -30)"
     ]
   }
 }
