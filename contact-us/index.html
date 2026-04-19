@@ -110,6 +110,22 @@ flexibility(document.documentElement);
 <link rel="icon" href="https://www.hawaiipoolcleaners.com/wp-content/uploads/2024/06/cropped-Hawaii-Pool-Cleaners-Logo-192x192.jpg" sizes="192x192">
 <link rel="apple-touch-icon" href="https://www.hawaiipoolcleaners.com/wp-content/uploads/2024/06/cropped-Hawaii-Pool-Cleaners-Logo-180x180.jpg">
 <meta name="msapplication-TileImage" content="/wp-content/uploads/2024/06/cropped-Hawaii-Pool-Cleaners-Logo-270x270.jpg">
+<style>
+#hpc-contact-form-wrap{max-width:680px;margin:40px 0 0;padding:40px 44px;background:#f8fafc;border-radius:16px;border:1px solid #e2e8f0}
+#hpc-contact-form-wrap h2{font-size:1.4rem;font-weight:700;color:#0a1628;margin-bottom:8px}
+#hpc-contact-form-wrap .hpc-sub{font-size:.9rem;color:#4a6080;margin-bottom:28px;line-height:1.6}
+.hpc-form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:18px}
+.hpc-form-group label{font-size:.78rem;font-weight:600;color:#0a1628;letter-spacing:.04em;text-transform:uppercase}
+.hpc-form-group input,.hpc-form-group select,.hpc-form-group textarea{padding:12px 14px;border:1.5px solid #d1d9e6;border-radius:8px;font-size:.95rem;font-family:inherit;color:#0a1628;background:#fff;outline:none;transition:border-color .2s,box-shadow .2s;width:100%}
+.hpc-form-group input:focus,.hpc-form-group select:focus,.hpc-form-group textarea:focus{border-color:#00D082;box-shadow:0 0 0 3px rgba(0,208,130,.12)}
+.hpc-form-group textarea{resize:vertical;min-height:120px}
+.hpc-submit{width:100%;padding:14px;background:#00D082;color:#0a1628;border:none;border-radius:50px;font-size:.88rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .25s,transform .25s;margin-top:6px}
+.hpc-submit:hover{background:#7adcb4;transform:translateY(-2px)}
+#hpc-form-success{display:none;padding:32px 20px;text-align:center;color:#0a1628}
+#hpc-form-success strong{font-size:1.1rem;display:block;margin-bottom:8px}
+#hpc-form-success p{font-size:.9rem;color:#4a6080}
+@media(max-width:600px){#hpc-contact-form-wrap{padding:28px 20px}}
+</style>
 </head>
 
 <body itemtype="https://schema.org/WebPage" itemscope="itemscope" class="page-template-default page page-id-11 wp-custom-logo ast-desktop ast-plain-container ast-no-sidebar astra-4.9.1 ast-single-post ast-inherit-site-logo-transparent ast-hfb-header ast-normal-title-enabled">
@@ -229,8 +245,45 @@ flexibility(document.documentElement);
 <p>Call us at: <strong>(808) 864-3605</strong></p>
 <div class="BgK4Ef ">We look forward to hearing from you!</div>
 
-	
-	
+<div id="hpc-contact-form-wrap">
+  <h2>Send Us a Message</h2>
+  <p class="hpc-sub">Fill out the form below and we'll get back to you within one business day. For faster service, call or text us at <strong>(808) 864-3605</strong>.</p>
+  <form id="hpcContactForm" action="https://formspree.io/f/xjgpvygy" method="POST">
+    <div class="hpc-form-group">
+      <label for="hpc-name">Full Name</label>
+      <input type="text" id="hpc-name" name="name" required placeholder="Your full name">
+    </div>
+    <div class="hpc-form-group">
+      <label for="hpc-email">Email Address</label>
+      <input type="email" id="hpc-email" name="email" required placeholder="your@email.com">
+    </div>
+    <div class="hpc-form-group">
+      <label for="hpc-phone">Phone Number</label>
+      <input type="tel" id="hpc-phone" name="phone" placeholder="(808) 555-0000">
+    </div>
+    <div class="hpc-form-group">
+      <label for="hpc-service">Service Needed</label>
+      <select id="hpc-service" name="service">
+        <option value="">Select a service...</option>
+        <option value="Vinyl Liner Installation">Vinyl Liner Installation</option>
+        <option value="Vinyl Liner Repair">Vinyl Liner Repair</option>
+        <option value="Pool Repair &amp; Restoration">Pool Repair &amp; Restoration</option>
+        <option value="Pool Cleaning &amp; Maintenance">Pool Cleaning &amp; Maintenance</option>
+        <option value="Not Sure / General Inquiry">Not Sure / General Inquiry</option>
+      </select>
+    </div>
+    <div class="hpc-form-group">
+      <label for="hpc-message">Message</label>
+      <textarea id="hpc-message" name="message" required placeholder="Describe your pool and what you need. Pool size, current condition, timeline — anything helps."></textarea>
+    </div>
+    <button type="submit" class="hpc-submit">Send My Message</button>
+  </form>
+  <div id="hpc-form-success">
+    <strong>Message Sent!</strong>
+    <p>Thanks for reaching out. We'll get back to you within one business day.</p>
+  </div>
+</div>
+
 </div><!-- .entry-content .clear -->
 
 	
@@ -273,5 +326,23 @@ var astra = {"break_point":"921","isRtl":"","is_scroll_to_id":"1","is_scroll_to_
 			<script>
 			/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
 			</script>
+<script>
+(function(){
+  var form=document.getElementById('hpcContactForm');
+  var success=document.getElementById('hpc-form-success');
+  if(!form)return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=form.querySelector('.hpc-submit');
+    btn.disabled=true;btn.textContent='Sending...';
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+      .then(function(r){
+        if(r.ok){form.style.display='none';success.style.display='block';}
+        else{alert('There was a problem sending your message. Please try again.');btn.disabled=false;btn.textContent='Send My Message';}
+      })
+      .catch(function(){alert('There was a problem sending your message. Please try again.');btn.disabled=false;btn.textContent='Send My Message';});
+  });
+})();
+</script>
 				</body>
 </html>
