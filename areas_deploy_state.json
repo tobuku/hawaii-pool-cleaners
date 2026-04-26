@@ -1,11 +1,17 @@
 {
   "pushed": [
-    "kaneohe",
-    "honolulu",
     "pearl-city",
+    "honolulu",
+    "waikiki",
+    "kailua",
+    "hawaii-kai",
+    "aiea",
+    "waipahu",
     "mililani",
-    "kapolei",
-    "kailua"
+    "ewa-beach",
+    "ewa-gentry",
+    "kaneohe",
+    "kapolei"
   ],
   "batches": [
     {
@@ -17,6 +23,17 @@
         "kapolei",
         "mililani",
         "pearl-city"
+      ]
+    },
+    {
+      "date": "2026-04-25",
+      "slugs": [
+        "hawaii-kai",
+        "aiea",
+        "waipahu",
+        "ewa-beach",
+        "ewa-gentry",
+        "waikiki"
       ]
     }
   ]
