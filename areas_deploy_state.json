@@ -1,17 +1,23 @@
 {
   "pushed": [
-    "pearl-city",
-    "honolulu",
     "waikiki",
-    "kailua",
-    "hawaii-kai",
-    "aiea",
+    "kaimuki",
     "waipahu",
-    "mililani",
-    "ewa-beach",
     "ewa-gentry",
+    "moanalua",
     "kaneohe",
-    "kapolei"
+    "ewa-beach",
+    "kapolei",
+    "mililani",
+    "manoa",
+    "hawaii-kai",
+    "pearl-harbor",
+    "aiea",
+    "salt-lake",
+    "aliamanu",
+    "honolulu",
+    "kailua",
+    "pearl-city"
   ],
   "batches": [
     {
@@ -34,6 +40,17 @@
         "ewa-beach",
         "ewa-gentry",
         "waikiki"
+      ]
+    },
+    {
+      "date": "2026-05-08",
+      "slugs": [
+        "kaimuki",
+        "manoa",
+        "salt-lake",
+        "aliamanu",
+        "moanalua",
+        "pearl-harbor"
       ]
     }
   ]
