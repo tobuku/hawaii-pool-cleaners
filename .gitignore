@@ -1,0 +1,14 @@
+# Satellite tiles (large, generated locally)
+pool-data/tiles/
+
+# Raw CV detections (intermediate, large)
+pool-data/detections.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db

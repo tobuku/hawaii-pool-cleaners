@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Oahu Pool Scanner — Lead Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #111; color: #eee; display: flex; flex-direction: column; height: 100vh; }
+
+    #toolbar {
+      display: flex; align-items: center; gap: 12px; padding: 8px 14px;
+      background: #1a1a1a; border-bottom: 1px solid #333; flex-shrink: 0; flex-wrap: wrap;
+    }
+    #toolbar h1 { font-size: 14px; font-weight: 600; color: #fff; white-space: nowrap; }
+    #toolbar label { font-size: 12px; color: #aaa; }
+    #neighborhood-filter {
+      background: #2a2a2a; color: #eee; border: 1px solid #444;
+      padding: 4px 8px; font-size: 12px; border-radius: 4px; min-width: 180px;
+    }
+    #source-filter {
+      background: #2a2a2a; color: #eee; border: 1px solid #444;
+      padding: 4px 8px; font-size: 12px; border-radius: 4px;
+    }
+    #pool-count {
+      font-size: 12px; color: #7cf; background: #1e2d3a;
+      padding: 4px 10px; border-radius: 4px; border: 1px solid #2a4d6a;
+    }
+    #export-btn {
+      background: #1a5c2a; color: #7fe89a; border: 1px solid #2a8a3a;
+      padding: 5px 12px; font-size: 12px; border-radius: 4px; cursor: pointer;
+    }
+    #export-btn:hover { background: #236b33; }
+    #status { font-size: 11px; color: #888; margin-left: auto; }
+
+    #map { flex: 1; }
+
+    .pool-popup { font-size: 12px; line-height: 1.6; min-width: 200px; }
+    .pool-popup strong { font-size: 13px; }
+    .pool-popup .source-badge {
+      display: inline-block; padding: 1px 6px; border-radius: 3px;
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      margin-left: 4px; vertical-align: middle;
+    }
+    .source-osm { background: #1a5c7a; color: #7ce; }
+    .source-cv  { background: #5c3a1a; color: #fa9; }
+  </style>
+</head>
+<body>
+
+<div id="toolbar">
+  <h1>Oahu Pool Scanner</h1>
+
+  <label for="neighborhood-filter">Neighborhood:</label>
+  <select id="neighborhood-filter">
+    <option value="">All Neighborhoods</option>
+  </select>
+
+  <label for="source-filter">Source:</label>
+  <select id="source-filter">
+    <option value="">All Sources</option>
+    <option value="osm">OSM only</option>
+    <option value="cv">CV only</option>
+  </select>
+
+  <div id="pool-count">Loading...</div>
+
+  <button id="export-btn" onclick="exportCSV()">Export Filtered CSV</button>
+
+  <span id="status">Serve with: python -m http.server 8000 from repo root</span>
+</div>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+// ---------------------------------------------------------------------------
+// Map setup — Esri World Imagery satellite basemap
+// ---------------------------------------------------------------------------
+const map = L.map('map', { center: [21.45, -157.98], zoom: 11 });
+
+L.tileLayer(
+  'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+  {
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+    maxZoom: 19
+  }
+).addTo(map);
+
+// ---------------------------------------------------------------------------
+// Neighborhood slugs (ordered, same as deploy_areas.py)
+// ---------------------------------------------------------------------------
+const SLUGS = [
+  "honolulu","kailua","kaneohe","kapolei","mililani","pearl-city","hawaii-kai",
+  "aiea","waipahu","ewa-beach","ewa-gentry","waikiki","kaimuki","manoa",
+  "salt-lake","aliamanu","moanalua","pearl-harbor","downtown-honolulu","kakaako",
+  "ala-moana","kapahulu","mccully","kalihi","punchbowl","palolo","aina-haina",
+  "niu-valley","kalama-valley","kahala","enchanted-lake","lanikai","waimanalo",
+  "kaneohe-bay","ahuimanu","makakilo","iroquois-point","hickam-housing",
+  "schofield-barracks","wheeler-army-airfield","tripler-army-medical-center",
+  "haleiwa","waialua","kahuku","laie","hauula","kaaawa","waianae","nanakuli",
+  "maili","makaha","whitmore-village","campbell-industrial-park","unknown"
+];
+
+// Populate neighborhood dropdown
+const nhSelect = document.getElementById('neighborhood-filter');
+SLUGS.forEach(slug => {
+  const opt = document.createElement('option');
+  opt.value = slug;
+  opt.textContent = slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  nhSelect.appendChild(opt);
+});
+
+// ---------------------------------------------------------------------------
+// Data + markers
+// ---------------------------------------------------------------------------
+let allPools = [];
+let markerCluster = L.markerClusterGroup({ chunkedLoading: true });
+map.addLayer(markerCluster);
+
+const osmIcon = L.circleMarker ? null : null; // using circleMarkers below
+
+function makeMarker(pool) {
+  const color = pool.source === 'osm' ? '#3ab8e0' : '#f0a040';
+  const m = L.circleMarker([pool.lat, pool.lon], {
+    radius: 6,
+    fillColor: color,
+    color: '#fff',
+    weight: 1,
+    fillOpacity: 0.85
+  });
+
+  const sourceClass = 'source-' + pool.source;
+  const name = pool.name || '(unnamed)';
+  const addr = pool.address || 'no address';
+  const nh = pool.neighborhood || 'unknown';
+
+  m.bindPopup(`
+    <div class="pool-popup">
+      <strong>${name}</strong>
+      <span class="source-badge ${sourceClass}">${pool.source}</span>
+      <br>
+      <small>${addr}</small>
+      <hr style="margin:4px 0;border-color:#444">
+      <span style="color:#aaa">Neighborhood:</span> ${nh}<br>
+      <span style="color:#aaa">Coords:</span> ${pool.lat.toFixed(5)}, ${pool.lon.toFixed(5)}<br>
+      <span style="color:#aaa">ID:</span> ${pool.id}
+    </div>
+  `);
+
+  return m;
+}
+
+function applyFilters() {
+  const nh = nhSelect.value;
+  const src = document.getElementById('source-filter').value;
+
+  const filtered = allPools.filter(p => {
+    if (nh && p.neighborhood !== nh) return false;
+    if (src && p.source !== src) return false;
+    return true;
+  });
+
+  markerCluster.clearLayers();
+  const markers = filtered.map(makeMarker);
+  markerCluster.addLayers(markers);
+
+  document.getElementById('pool-count').textContent =
+    `${filtered.length.toLocaleString()} pools` +
+    (filtered.length !== allPools.length ? ` / ${allPools.length.toLocaleString()} total` : '');
+}
+
+nhSelect.addEventListener('change', applyFilters);
+document.getElementById('source-filter').addEventListener('change', applyFilters);
+
+// ---------------------------------------------------------------------------
+// Load GeoJSON
+// ---------------------------------------------------------------------------
+fetch('../pool-data/all_pools.geojson')
+  .then(r => {
+    if (!r.ok) throw new Error('all_pools.geojson not found. Run merge_pools.py first.');
+    return r.json();
+  })
+  .then(gj => {
+    allPools = gj.features.map(f => f.properties);
+    console.log(`Loaded ${allPools.length} pools.`);
+    applyFilters();
+  })
+  .catch(err => {
+    document.getElementById('status').textContent = 'Error: ' + err.message;
+    document.getElementById('status').style.color = '#f88';
+    document.getElementById('pool-count').textContent = 'No data';
+    console.error(err);
+  });
+
+// ---------------------------------------------------------------------------
+// Export CSV
+// ---------------------------------------------------------------------------
+function exportCSV() {
+  const nh = nhSelect.value;
+  const src = document.getElementById('source-filter').value;
+  const filtered = allPools.filter(p => {
+    if (nh && p.neighborhood !== nh) return false;
+    if (src && p.source !== src) return false;
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    alert('No pools match current filter.');
+    return;
+  }
+
+  const cols = ['id', 'lat', 'lon', 'name', 'address', 'neighborhood', 'source'];
+  const lines = [cols.join(',')];
+  filtered.forEach(p => {
+    const row = cols.map(c => {
+      const val = (p[c] ?? '').toString().replace(/"/g, '""');
+      return `"${val}"`;
+    });
+    lines.push(row.join(','));
+  });
+
+  const blob = new Blob([lines.join('\n')], { type: 'text/csv' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  const suffix = nh ? `_${nh}` : '';
+  a.download = `oahu_pools${suffix}.csv`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+</script>
+</body>
+</html>
