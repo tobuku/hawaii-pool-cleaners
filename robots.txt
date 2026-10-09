@@ -1,12 +1,13 @@
 User-agent: *
 Allow: /
-Disallow: /wp-admin/
-Disallow: /wp-json/
-Disallow: /wp-login.php
-Disallow: /wp-includes/
-Disallow: /*/feed/
-Disallow: /feed/
-Disallow: /comments/feed/
-Disallow: /xmlrpc.php
+Disallow: /tag/
+Disallow: /category/
+Disallow: /author/
+Disallow: /form/
+Disallow: /post-1/
+Disallow: /post-2/
+Disallow: /post-3/
+Disallow: /147-2/
+Disallow: /blog-2/
 
 Sitemap: https://hawaiipoolcleaners.com/sitemap.xml

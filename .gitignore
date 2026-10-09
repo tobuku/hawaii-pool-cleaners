@@ -4,6 +4,9 @@ pool-data/tiles/
 # Raw CV detections (intermediate, large)
 pool-data/detections.json
 
+# GSC credentials
+.gsc-credentials/
+
 # Python
 __pycache__/
 *.pyc
